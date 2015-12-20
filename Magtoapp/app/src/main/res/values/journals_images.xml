@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="journals_imgs">
+        <item>@drawable/android_1</item>
+        <item>@drawable/android_2</item>
+        <item>@drawable/android_3</item>
+    </string-array>
+
+</resources>
