@@ -1,11 +1,13 @@
 package com.kelebro63.magtoapp.screens;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.kelebro63.magtoapp.R;
 import com.kelebro63.magtoapp.screens.fragments.ListJournalsFragment;
+import com.kelebro63.magtoapp.screens.fragments.PagerJournalsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +23,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setFragmentList();
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            setFragmentList();
+        } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            setFragmentPager();
+        }
     }
 
     private boolean switchFragment() {
@@ -30,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 setFragmentPager();
                 break;
             case FRAGMENT_LIST:
-                setFragmentList();
+                setFragmentPager();
                 break;
             default:
                 return false;
@@ -46,10 +57,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setFragmentPager() {
-//        CustomerListFragment contactsFragment = new CustomerListFragment();
-//        contactsFragment.setOnClickListener(this);
-//        contactsFragment.setType(CustomerListFragment.TYPE_LIST);
-//        mFragmentManager.beginTransaction().replace(R.id.container, contactsFragment).commit();
-//        mCurrentFragmentId = MainFragmentID.FRAGMENT_CONTACTS;
+        PagerJournalsFragment pagerJournalsFragment = new PagerJournalsFragment();
+        //PagerJournalsFragment.setOnClickListener(this);
+        mFragmentManager.beginTransaction().replace(R.id.container, pagerJournalsFragment).commit();
+        mCurrentFragmentId = MainFragmentID.FRAGMENT_PAGER;
     }
 }

@@ -37,6 +37,8 @@ public class JournalsAdapter extends ArrayAdapter<Journal> {
         TapeView tapeView = (TapeView) rowView.findViewById(R.id.tape_img);
         if (!journal.isNew()) {
             tapeView.setVisibleTapeView(false);
+        } else {
+           // tapeView.setTextForTape("test");
         }
         return rowView;
     }

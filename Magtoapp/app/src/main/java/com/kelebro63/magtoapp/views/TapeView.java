@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.kelebro63.magtoapp.R;
 
@@ -16,6 +17,7 @@ public class TapeView extends RelativeLayout {
 
     LayoutInflater mInflater;
     private ImageView mTapeView;
+    private TextView mTapetext;
 
     public TapeView(Context context) {
         super(context);
@@ -39,6 +41,7 @@ public class TapeView extends RelativeLayout {
     {
         mInflater.inflate(R.layout.tape_view, this, true);
         mTapeView = (ImageView) findViewById(R.id.tape_view_img);
+        mTapetext = (TextView) findViewById(R.id.tape_text);
     }
 
     public void setVisibleTapeView(Boolean visible) {
@@ -47,6 +50,10 @@ public class TapeView extends RelativeLayout {
         } else {
             mTapeView.setVisibility(View.GONE);
         }
+    }
+
+    public void setTextForTape(String text) {
+        mTapetext.setText(text);
     }
 
 
