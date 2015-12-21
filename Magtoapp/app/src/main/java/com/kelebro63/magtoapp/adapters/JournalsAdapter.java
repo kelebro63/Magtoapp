@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.kelebro63.magtoapp.R;
 import com.kelebro63.magtoapp.model.Journal;
+import com.kelebro63.magtoapp.views.TapeView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -18,8 +19,8 @@ public class JournalsAdapter extends ArrayAdapter<Journal> {
     private LayoutInflater mInflater;
     private  Context context;
 
-    public JournalsAdapter(Context context, List<Journal> contacts) {
-        super(context, R.layout.list_journal_item, contacts);
+    public JournalsAdapter(Context context, List<Journal> journals) {
+        super(context, R.layout.list_journal_item, journals);
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.context = context;
     }
@@ -33,9 +34,10 @@ public class JournalsAdapter extends ArrayAdapter<Journal> {
         //imageView.setImageResource(journal.getImageResources());
         Picasso.with(context).load(journal.getImageResources()).into(imageView);
 
-//        Picasso.Builder builder = new Picasso.Builder(context);
-//        builder.indicatorsEnabled(true);
-//        builder.build().load(journal.getImageResources()).into(imageView);
+        TapeView tapeView = (TapeView) rowView.findViewById(R.id.tape_img);
+        if (!journal.isNew()) {
+            tapeView.setVisibleTapeView(false);
+        }
         return rowView;
     }
 

@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/left_tape"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_above="@+id/journal_image"
-        android:layout_toLeftOf="@+id/journal_image"
-        android:layout_toStartOf="@+id/journal_image" />
-    <ImageView
-        android:id="@+id/journal_image"
+
+    <RelativeLayout
         android:layout_width="250dp"
         android:layout_height="380dp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true">
+        <ImageView
+            android:id="@+id/journal_image"
+            android:layout_width="230dp"
+            android:layout_height="340dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+        <com.kelebro63.magtoapp.views.TapeView
+            android:id="@+id/tape_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="visible"
+           >
+
+        </com.kelebro63.magtoapp.views.TapeView>
+    </RelativeLayout>
+
 
 </RelativeLayout>
