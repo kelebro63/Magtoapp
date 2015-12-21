@@ -56,6 +56,8 @@ public class PagerJournalsFragment extends Fragment {
         }
         journals.get(0).setIsNew(true);
         journals.get(0).setLeftTapeVisible(true);
+        journals.get(journals.size()-1).setIsNew(true);
+        journals.get(journals.size()-1).setLeftTapeVisible(true);
         return journals;
     }
 

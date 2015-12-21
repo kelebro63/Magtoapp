@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.kelebro63.magtoapp.R;
 import com.kelebro63.magtoapp.model.Journal;
-import com.kelebro63.magtoapp.views.TapeView;
+import com.kelebro63.magtoapp.views.TapeViewLeft;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -40,9 +40,9 @@ public class JournalsPagerAdapter extends PagerAdapter {
         //imageView.setImageResource(journal.getImageResources());
         Picasso.with(context).load(journal.getImageResources()).into(imageView);
 
-        TapeView tapeView = (TapeView) view.findViewById(R.id.tape_img);
+        TapeViewLeft tapeViewLeft = (TapeViewLeft) view.findViewById(R.id.tape_img);
         if (!journal.isNew()) {
-            tapeView.setVisibleTapeView(false);
+            tapeViewLeft.setVisibleTapeView(false);
         } else {
             // tapeView.setTextForTape("test");
         }

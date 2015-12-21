@@ -13,25 +13,25 @@ import com.kelebro63.magtoapp.R;
 /**
  * Created by Bistrov Alexey on 21.12.2015.
  */
-public class TapeView extends RelativeLayout {
+public class TapeViewLeft extends RelativeLayout {
 
     LayoutInflater mInflater;
     private ImageView mTapeView;
     private TextView mTapetext;
 
-    public TapeView(Context context) {
+    public TapeViewLeft(Context context) {
         super(context);
         mInflater = LayoutInflater.from(context);
         init();
     }
 
-    public TapeView(Context context, AttributeSet attrs) {
+    public TapeViewLeft(Context context, AttributeSet attrs) {
         super(context, attrs);
         mInflater = LayoutInflater.from(context);
         init();
     }
 
-    public TapeView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public TapeViewLeft(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mInflater = LayoutInflater.from(context);
         init();
