@@ -36,7 +36,7 @@ public class PagerJournalsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pager_journals, container, false);
         mContainer = (PagerContainer) view.findViewById(R.id.pager_container);
         mPager = mContainer.getViewPager();
-        adapter = new JournalsPagerAdapter(getActivity(), R.layout.list_journal_item, (ArrayList<Journal>) getJournals());
+        adapter = new JournalsPagerAdapter(getActivity(), R.layout.pager_journal_item, (ArrayList<Journal>) getJournals());
         mPager.setAdapter(adapter);
         mPager.setOffscreenPageLimit(adapter.getCount());
         // mPager.setPageMargin();

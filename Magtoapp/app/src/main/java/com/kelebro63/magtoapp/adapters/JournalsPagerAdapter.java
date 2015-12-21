@@ -54,12 +54,14 @@ public class JournalsPagerAdapter extends PagerAdapter {
     }
 
     @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return (view == object);
+    }
+
+    @Override
     public int getCount() {
         return  this.mJournalItems.size();
     }
 
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return false;
-    }
+
 }
