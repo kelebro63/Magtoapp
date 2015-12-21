@@ -7,21 +7,24 @@
 
 
     <RelativeLayout
-        android:layout_width="250dp"
-        android:layout_height="380dp"
-        android:layout_centerInParent="true">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent">
         <ImageView
             android:id="@+id/journal_image"
-            android:layout_width="230dp"
-            android:layout_height="340dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:padding="10dp"
+           />
         <com.kelebro63.magtoapp.views.TapeView
             android:id="@+id/tape_img"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:visibility="visible"
            >
 

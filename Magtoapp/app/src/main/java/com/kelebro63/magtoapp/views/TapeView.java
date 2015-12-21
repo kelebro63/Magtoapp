@@ -47,8 +47,10 @@ public class TapeView extends RelativeLayout {
     public void setVisibleTapeView(Boolean visible) {
         if (visible) {
             mTapeView.setVisibility(View.VISIBLE);
+            mTapetext.setVisibility(View.VISIBLE);
         } else {
             mTapeView.setVisibility(View.GONE);
+            mTapetext.setVisibility(View.GONE);
         }
     }
 
