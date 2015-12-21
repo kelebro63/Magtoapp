@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.kelebro63.magtoapp.R;
 import com.kelebro63.magtoapp.model.Journal;
 import com.kelebro63.magtoapp.views.TapeViewLeft;
+import com.kelebro63.magtoapp.views.TapeViewRight;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -35,10 +36,16 @@ public class JournalsAdapter extends ArrayAdapter<Journal> {
         Picasso.with(context).load(journal.getImageResources()).into(imageView);
 
         TapeViewLeft tapeViewLeft = (TapeViewLeft) rowView.findViewById(R.id.tape_img);
+        TapeViewRight tapeViewRight = (TapeViewRight) rowView.findViewById(R.id.tape_img_right);
         if (!journal.isNew()) {
             tapeViewLeft.setVisibleTapeView(false);
+            tapeViewRight.setVisibleTapeView(false);
         } else {
-           // tapeView.setTextForTape("test");
+            if (journal.isLeftTapeVisible()) {
+                tapeViewRight.setVisibleTapeView(false);
+            } else if (journal.isRightTapeVisible()) {
+                tapeViewLeft.setVisibleTapeView(false);
+            }
         }
         return rowView;
     }

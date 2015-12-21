@@ -10,7 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-
         >
         <ImageView
             android:id="@+id/journal_image"
@@ -26,9 +25,16 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:visibility="visible"
+            />
+        <com.kelebro63.magtoapp.views.TapeViewRight
+            android:id="@+id/tape_img_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
             >
-
-        </com.kelebro63.magtoapp.views.TapeViewLeft>
+        </com.kelebro63.magtoapp.views.TapeViewRight>
     </RelativeLayout>
 
 
