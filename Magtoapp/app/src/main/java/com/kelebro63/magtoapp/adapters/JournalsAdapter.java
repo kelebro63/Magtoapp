@@ -31,22 +31,28 @@ public class JournalsAdapter extends ArrayAdapter<Journal> {
         View rowView = mInflater.inflate(R.layout.list_journal_item, parent, false);
         Journal journal = getItem(position);
 
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.journal_image);
+        final ImageView imageView = (ImageView) rowView.findViewById(R.id.journal_image);
         //imageView.setImageResource(journal.getImageResources());
         Picasso.with(context).load(journal.getImageResources()).into(imageView);
 
-        TapeViewLeft tapeViewLeft = (TapeViewLeft) rowView.findViewById(R.id.tape_img);
-        TapeViewRight tapeViewRight = (TapeViewRight) rowView.findViewById(R.id.tape_img_right);
+        final TapeViewLeft tapeViewLeft = (TapeViewLeft) rowView.findViewById(R.id.tape_img);
+        final TapeViewRight tapeViewRight = (TapeViewRight) rowView.findViewById(R.id.tape_img_right);
         if (!journal.isNew()) {
             tapeViewLeft.setVisibleTapeView(false);
             tapeViewRight.setVisibleTapeView(false);
         } else {
             if (journal.isLeftTapeVisible()) {
-                tapeViewRight.setVisibleTapeView(false);
-            } else if (journal.isRightTapeVisible()) {
+                tapeViewLeft.setVisibleTapeView(true);
+            } else {
                 tapeViewLeft.setVisibleTapeView(false);
             }
+            if (journal.isRightTapeVisible()) {
+                tapeViewRight.setVisibleTapeView(true);
+            }else {
+                tapeViewRight.setVisibleTapeView(false);
+            }
         }
+
         return rowView;
     }
 

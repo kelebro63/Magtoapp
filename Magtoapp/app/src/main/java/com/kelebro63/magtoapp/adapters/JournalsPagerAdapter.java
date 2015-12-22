@@ -48,11 +48,15 @@ public class JournalsPagerAdapter extends PagerAdapter {
             tapeViewRight.setVisibleTapeView(false);
         } else {
             if (journal.isLeftTapeVisible()) {
-                tapeViewRight.setVisibleTapeView(false);
-            } else if (journal.isRightTapeVisible()) {
+                tapeViewLeft.setVisibleTapeView(true);
+            } else {
                 tapeViewLeft.setVisibleTapeView(false);
             }
-            // tapeView.setTextForTape("test");
+            if (journal.isRightTapeVisible()) {
+                tapeViewRight.setVisibleTapeView(true);
+            }else {
+                tapeViewRight.setVisibleTapeView(false);
+            }
         }
 
         //initViews(position);
