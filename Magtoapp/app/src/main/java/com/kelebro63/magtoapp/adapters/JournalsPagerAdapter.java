@@ -59,6 +59,8 @@ public class JournalsPagerAdapter extends PagerAdapter {
             }
         }
 
+        imageView.setVisibility(View.GONE);
+        imageView.setVisibility(View.VISIBLE);
         //initViews(position);
 
         container.addView(view);

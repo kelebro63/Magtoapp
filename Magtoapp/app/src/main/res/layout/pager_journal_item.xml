@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="290dp"
     android:layout_height="match_parent">
 
 
@@ -10,28 +10,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
         >
-        <ImageView
-            android:id="@+id/journal_image"
+        <LinearLayout
+            android:id="@+id/ll_img"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-           android:scaleType="fitStart" />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/journal_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:padding="10dp" />
+        </LinearLayout>
+
         <com.kelebro63.magtoapp.views.TapeViewLeft
             android:id="@+id/tape_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@id/ll_img"
             android:visibility="visible"
             />
         <com.kelebro63.magtoapp.views.TapeViewRight
             android:id="@+id/tape_img_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignRight="@id/ll_img"
             android:visibility="visible"
             >
         </com.kelebro63.magtoapp.views.TapeViewRight>
